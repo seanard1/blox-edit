@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .instruction {
+            margin-bottom: 7px;
+            cursor: pointer;
+        }
+        .space {
+            margin-bottom: 7px;
+            cursor: pointer;
+        }
+        .blue-underlined {
+            color: blue; 
+            text-decoration: underline; 
+        }
+        .red-warning {
+            color: red; 
+            text-decoration: bold; 
+        }
+        .red-warning-link {
+            color: red; 
+            text-decoration: underline; 
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .highlighted {
+            background-color: #f7f79a; /* Change the background color to your preference */
+        }
+        .fixed-container {
+            position: fixed;
+            /* top: 250px; */
+            right: 1px;
+            /* transform: translate(-50%, -50%); */
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-md-6 container">
+            <h1>Blox checklist for editors</h1>
+            <!-- <p>Immediately after a story is approved by the desk:</p> -->
+            <ol id="workflow">
+                <li>Byline or Authors:</li>
+                    <ol type="a" id="workflow">
+                        <li><span class="blue-underlined instruction" onclick="showImage('01a-byline.png', this)">Byline</span> when contributors don't have an author profile in the system. </li>
+                        <li><span class="blue-underlined instruction" onclick="showImage('01b-authors.png', this)">Authors</span> are people (like you) who have an author profile in the system.</li>
+                        <li class="space"><span class="blue-underlined instruction" onclick="showImage('01c-empty.png', this)">Empty</span> for news/crime briefs.</li>
+                    </ol>
+
+                <li class="space"><span class="blue-underlined instruction" onclick="showImage('02a-hyperlinks.png', this)">Hyperlinks</span>
+                     are correct, especially <span class="blue-underlined instruction" onclick="showImage('02b-email-address.png', this)">email addresses</span>
+                     and <span class="blue-underlined instruction" onclick="showImage('02c-phone-number.png', this)">phone numbers.</span> 
+                     Click on the hyperlink so your cursor is on the copy, then click the hyperlink button to review.
+                     Click on the <span class="blue-underlined instruction" onclick="showImage('02d-hyperlinks-remove.png', this)">right side</span> of the link if you need the option to remove a hyperlink. 
+                </li>
+
+                <li class="space"><span class="blue-underlined instruction" onclick="showImage('03-bold-italics.png', this)">Special formatting:</span> <strong>Bold</strong> or <i>italics</i>
+                    are fine separately, but <strong><em>not combined</em></strong>; <u>underline</u> is not used.
+               </li>
+
+               <li class="space"><span class="blue-underlined instruction" onclick="showImage('04-subhead-heading2.png', this)">Subhead:</span> use Heading 2 (i.e. Format: Heading 2).</li>
+
+               <li class="space"><span class="red-warning-link instruction" onclick="showImage('05-summary.png', this)">Summary:</span> 
+                    <span class="red-warning">Required field. Should be populated. Don’t use bold/italics/hyperlinks/etc.</span></li>
+
+                <li class="space"><span class="blue-underlined instruction" onclick="showImage('06-tagline.png', this)">Tagline:</span> Contributing writers’ taglines go here in italics. Must be populated when the Byline field is used.</li>
+
+                <li class="space"><span class="red-warning-link instruction" onclick="showImage('07-seo-title.png', this)">SEO title:</span> 
+                    <span class="red-warning">required it must be 60 or fewer characters.</span></li>
+
+                <li class="space"><span class="blue-underlined instruction" onclick="showImage('08-seo-description.png', this)">SEO description:</span> can be a copy-paste of summary. Should be between 120-160 characters.</li>
+
+                <li class="space"><span class="blue-underlined instruction" onclick="showImage('09a-canonical-url.png', this)">Canonical URL</span>
+                    should be set to the real article page and should not include hub.metroland.com. The asset needs to be in 
+                    <span class="blue-underlined instruction" onclick="showImage('09b-workflow-set-to-edit.png', this)">edit mode or higher</span>
+                    before this information becomes visible. If the URL is short, such as guelphmercury.com, then your reporter has put it in manually. Please remove the information and hit save. Blox will automatically adjust. 
+                </li>
+
+                <li class="space"><span class="red-warning-link instruction" onclick="showImage('10-slug.png', this)">Slug:</span> 
+                <span class="red-warning">required on every story.</span> Naming convention is newsroom code, desk code for dailies (e.g. ART, BUS, EDT, LOC, SPE, SPO), date, your initials and first parts of headline separated by dashes, 
+                    e.g. <strong>YRK-1005-JD-Region-tackles-homelessness</strong> or <strong>SPC-LOC-1005-JD-Region-tackles-homelessness.</strong> <span class="highlighted">Case sensitive</span>.</li>
+
+                
+                <li><span class="blue-underlined instruction" onclick="showImage('11-sections.png', this)">Sections accordion: </span></li>
+                    <ol type="a" id="workflow">
+                        <li><span class="red-warning">Category: At least one real article category (e.g. news, food and drink, opinion, etc.) is required in the first spot. </span></li>
+                        <li><span class="red-warning">Publication: One publication and one publication only (e.g. Oakville Beaver or insidehaltoncom) must be selected.</span></li>
+                    </ol>
+
+                <li><span class="blue-underlined instruction" onclick="showImage('12-keywords.png', this)">Keywords accordion: </span></li>
+                    <ol type="a" id="workflow">
+                        <li>Should have at least one keyword. Internal keywords must have a hashtag in front, e.g. #dandi, #helpme, #newsicanrelateto.</li>
+                    </ol>
+                
+                <li><span class="blue-underlined instruction" onclick="showImage('13-sites-origin.png', this)">Sites accordion: </span></li>
+                    <ol type="a" id="workflow">
+                        <li><span class="red-warning">At least one site must be marked as origin site. </span></li>
+                    </ol>                
+                
+                <li><span class="blue-underlined instruction" onclick="showImage('14a-child-asset-photo.png', this)">Child assets accordion: </span></li>
+                    <ol type="a" id="workflow">
+                        <li><strong>Photos:</strong> should have a title, byline and caption. Photographers field is not used. <span class="red-warning-link instruction" onclick="showImage('14a-child-asset-photo-workflow.png', this)">Photos should not have a workflow or section tags.</span> Photos shouldn’t have a “do not publish” symbol present (common on duplicated photos).</span></li>
+                        <li><strong>Other assets:</strong> check that tweets, videos and other content are accurate and have a proper title. <span class="red-warning">HTML elements should not have a workflow. </span></li>
+                    </ol>
+
+                <li><span class="blue-underlined instruction" onclick="showImage('15-sibling-assets.png', this)">Sibling assets accordion: </span></li>
+                    <ol type="a" id="workflow">
+                        <li><span class="highlighted">Related stories should go here.</span></li>
+                    </ol>
+
+                <li><span class="blue-underlined instruction" onclick="showImage('16a-content-pull-quotes.png', this)">Content accordion: </span></li>
+                    <ol type="a" id="workflow">
+                        <li>Fact box and pull quote are added here. <span class="blue-underlined instruction" onclick="showImage('16b-content-pull-quotes-edit-mode.png', this)">Open each</span> by double-clicking.</li>
+                    </ol>
+
+                <li class="space"><span class="blue-underlined instruction" onclick="showImage('17-other-misc-properties.png', this)">Miscellaneous properties:</span> the do not publish, disallow reactions and disallow user commenting are officially handled by automation. Do NOT touch.</li>
+                
+                <li class="space"><span class="blue-underlined instruction" onclick="showImage('18-other-web-deck.png', this)">Subheadline:</span> web deck.</li>
+
+                <li class="space"><strong>Workflow:</strong> should align with what you’re expecting, i.e. <span class="blue-underlined instruction" onclick="showImage('19a-workflow-live-edit.png', this)">live-edit</span>
+                     if sent to the CEC after it was published or <span class="blue-underlined instruction" onclick="showImage('19b-review-workflow.png', this)">review</span> if it was sent to the local editor for edits. </li>
+
+                <h2>Tips for Editors</h2>
+
+                <li class="space">Use the <span class="blue-underlined instruction" onclick="showImage('18-other-web-deck.png', this)">draft checkbox</span> when you’re editing a published asset. Remember to uncheck once you’re ready to push your changes to the web.</li>
+
+                
+            </ol>
+        </div>
+        <div class="col-md-6 container">
+            <div class="image-container fixed-container">
+                <img id="displayed-image" src="" alt="Displayed Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // function showImage(imagePath) {
+        //     var displayedImage = document.getElementById('displayed-image');
+        //     displayedImage.src = imagePath;
+        // }
+        function showImage(imagePath, listItem) {
+            var displayedImage = document.getElementById('displayed-image');
+            displayedImage.src = imagePath;
+
+            // Remove 'highlighted' class from all list items
+            var instructions = document.querySelectorAll('.instruction');
+            instructions.forEach(function(item) {
+                item.classList.remove('highlighted');
+            });
+
+            // Add 'highlighted' class to clicked list item
+            listItem.classList.add('highlighted');
+        }
+    </script>
+    
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</body>
+</html>
